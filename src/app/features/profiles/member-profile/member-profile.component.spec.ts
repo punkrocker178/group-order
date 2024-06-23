@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrdersTableComponent } from './orders-table.component';
-import { MockRequestHelperService } from '../../../shared/services/utils/tests/mock-request-helper-service';
+import { MemberProfileComponent } from './member-profile.component';
 import { RequestHelperService } from '../../../shared/services/utils/request-helper.service';
+import { MockRequestHelperService } from '../../../shared/services/utils/tests/mock-request-helper-service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-describe('OrdersTableComponent', () => {
-  let component: OrdersTableComponent;
-  let fixture: ComponentFixture<OrdersTableComponent>;
+describe('MemberProfileComponent', () => {
+  let component: MemberProfileComponent;
+  let fixture: ComponentFixture<MemberProfileComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        OrdersTableComponent,
+        MemberProfileComponent,
         BrowserAnimationsModule
       ],
       providers: [
@@ -21,7 +21,7 @@ describe('OrdersTableComponent', () => {
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(OrdersTableComponent);
+    fixture = TestBed.createComponent(MemberProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

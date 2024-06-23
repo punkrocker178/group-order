@@ -1,27 +1,18 @@
 <section class="text-align-right p-2">
   @if (currentUser()) {
-  <div>
-    <span>Howdy, {{ currentUser().name }}!</span>
+    <app-member-info [memberInfo]="currentUser()" align="right">
+        <a mat-menu-item routerLink="/my-profile">Profile</a>
 
-    <button class="ml-2" mat-stroked-button color="primary" [matMenuTriggerFor]="menu">
-      <mat-icon>manage_accounts</mat-icon>
-      Manage
-    </button>
+        <a mat-menu-item routerLink="/orders">Orders</a>
 
-    <mat-menu #menu="matMenu">
-      <a mat-menu-item routerLink="/orders">Orders</a>
+        <a mat-menu-item routerLink="/group-orders">Group orders</a>
 
-      <a mat-menu-item routerLink="/group-orders">Group orders</a>
-      
-      <button mat-menu-item color="warn" (click)="logout()">Logout</button>
+        <button mat-menu-item color="warn" (click)="logout()">Logout</button>
+    </app-member-info>
 
-    </mat-menu>
-
-  </div>
   } @else {
   <div class="m-2">
-    <button mat-flat-button color="primary" class="mr-2" (click)="openLoginDialog()">Login</button>
-    <button mat-stroked-button color="primary" (click)="openRegisterDialog()">Register</button>
+    <button mat-flat-button color="primary" (click)="login()">Login Portal</button>
   </div>
   }
 
